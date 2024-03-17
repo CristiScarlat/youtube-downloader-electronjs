@@ -1,0 +1,53 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background-color: #313131;
+}
+
+input[type="text"] {
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 5px 0 0 5px;
+  border: 2px solid white;
+  background-color: #efefef;
+}
+
+.input-container {
+  display: flex;
+  max-width: 30rem;
+  margin: 1rem auto;
+}
+
+.input-container button {
+  background-color: #efefef;
+  border-color: #efefef;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #313131;
+  font-weight: 600;
+}
+
+.players-container {
+  text-align: center;
+}
+
+.players-container .video-title{
+  color: navajowhite;
+}
+
+.progress-bar {
+  height: 1rem;
+  background-color: white;
+  max-width: 30rem;
+  margin: auto;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 1rem auto;
+}
+
+.progress-bar .progress-bar-fill {
+  background-color: aqua;
+  height: 1rem;
+}

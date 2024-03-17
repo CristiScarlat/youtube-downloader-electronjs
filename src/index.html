@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Youtube Downloader</title>
+        <link rel="stylesheet" href="index.css"/>
+    </head>
+    <body>
+        <div class="input-container">
+            <input type="text" placeholder="Copy video url and paste it here"/>
+            <button>Get video</button>
+        </div>
+        <div class="players-container">
+            <iframe
+                    width=""
+                    height=""
+                    src=""
+                    title=""
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+
+            </iframe>
+            <p class="video-title"></p>
+            <p class="video-info"></p>
+            <div class="progress-bar" id="progress-audio">
+                <div class="progress-bar-fill" style="width: 1%">
+                </div>
+            </div>
+            <div class="progress-bar" id="progress-video">
+                <div class="progress-bar-fill" style="width: 1%">
+                </div>
+            </div>
+            <p class="dl-finish-info"></p>
+        </div>
+        <script type="text/javascript" src="renderer.js"></script>
+    </body>
+</html>
