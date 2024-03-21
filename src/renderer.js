@@ -10,7 +10,7 @@ const finishMsg = document.querySelector(".dl-finish-info");
 window.onload = () => {
   getVideoBtn.onclick = () => {
     if(getVideoInput.value && getVideoInput.value !== ''){
-      window.electronAPI.getVideoUrl(getVideoInput.value)
+      window.electronAPI.getVideo({url: getVideoInput.value, type: 'only-info'})
     }
     else {
       console.log("Please paste url in input.")
@@ -22,8 +22,8 @@ window.onload = () => {
       videoTitle.innerText = data.payload.title;
       videoInfo.innerText = data.payload.details.description;
       player.src = data.payload.details.embed.iframeUrl;
-      player.width = data.payload.details.embed.width;
-      player.height = data.payload.details.embed.height;
+      player.width = data.payload.details.embed.width > 1000 ? data.payload.details.embed.width/2 : data.payload.details.embed.width;
+      player.height = data.payload.details.embed.width > 1000 ? data.payload.details.embed.height/2 : data.payload.details.embed.height;
       player.title = data.payload.details.title;
     }
     else if(data.type === "video-dl-progress"){

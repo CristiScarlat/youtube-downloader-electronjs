@@ -10,6 +10,18 @@
             <input type="text" placeholder="Copy video url and paste it here"/>
             <button>Get video</button>
         </div>
+        <div class="download-settings-container">
+            <div class="progress-bar" id="progress-audio">
+                <div class="progress-bar-fill" style="width: 1%">
+                </div>
+            </div>
+            <button class="download-button">Download</button>
+            <div>
+                <input type="checkbox" class="only-audio-button"/>
+                <label>Only Audio</label>
+            </div>
+
+        </div>
         <div class="players-container">
             <iframe
                     width=""
@@ -23,14 +35,7 @@
             </iframe>
             <p class="video-title"></p>
             <p class="video-info"></p>
-            <div class="progress-bar" id="progress-audio">
-                <div class="progress-bar-fill" style="width: 1%">
-                </div>
-            </div>
-            <div class="progress-bar" id="progress-video">
-                <div class="progress-bar-fill" style="width: 1%">
-                </div>
-            </div>
+
             <p class="dl-finish-info"></p>
         </div>
         <script type="text/javascript" src="renderer.js"></script>

@@ -26,14 +26,13 @@ const getYoutubeDownloadableUrls = async (videoUrl) => {
     return videoInfo
   }))
   const data = videos.map(video => {
-    console.log(video)
     const videoFormatObj = video.formats.filter((format) => format.hasAudio && format.hasVideo)[0];
     return {link: videoFormatObj.url, title: video.videoDetails.title, videoDetails: video.videoDetails}
   })
   return {data}
 }
 
-const youtubeDownloadHQ = async (videoUrl, donloadsDirPath, cb) => {
+const youtubeDownloadHQ = async (videoUrl, type, donloadsDirPath, cb) => {
   /**
    * Reencode audio & video without creating files first
    *
@@ -43,6 +42,7 @@ const youtubeDownloadHQ = async (videoUrl, donloadsDirPath, cb) => {
    * https://github.com/fent/node-ytdl-core/blob/cc6720f9387088d6253acc71c8a49000544d4d2a/example/ffmpeg.js
    */
 
+  console.log({videoUrl, type})
 // Buildin with nodejs
   let data = null;
 // Global constants
@@ -58,7 +58,7 @@ const youtubeDownloadHQ = async (videoUrl, donloadsDirPath, cb) => {
   } catch (e) {
     console.log(">>>>", e)
   }
-  console.log(typeof videoUrl, videoUrl)
+  if(type === 'only-info')return
   const ref = videoUrl;
   const tracker = {
     start: Date.now(),

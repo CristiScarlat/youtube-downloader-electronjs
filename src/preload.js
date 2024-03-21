@@ -1,6 +1,6 @@
-const { contextBridge, ipcRenderer } = require('electron/renderer')
+const { contextBridge, ipcRenderer } = require('electron/renderer');
 
 contextBridge.exposeInMainWorld('electronAPI', {
-  getVideoUrl: (data) => ipcRenderer.send('get-video-url', data),
+  getVideo: (data) => ipcRenderer.send('get-video-url', data),
   onMsgToRenderer: (callback) => ipcRenderer.on('on-message', (_event, value) => callback(value))
 })

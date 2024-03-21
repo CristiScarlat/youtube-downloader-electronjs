@@ -28,6 +28,7 @@ const createWindow = () => {
   //mainWindow.removeMenu();
 
   ipcMain.on('get-video-url', (event, data) => {
+    console.log({data})
     getVideoUrl(data, (rendererMsg) => mainWindow.webContents.send('on-message', rendererMsg))
       .then(res => {
         mainWindow.webContents.send('on-message', {type: "video-info", payload: res})
@@ -59,10 +60,9 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
-const getVideoUrl = async (videoUrl, cb) => {
-  console.log({videoUrl})
+const getVideoUrl = async (data, cb) => {
   try{
-    return await youtubeDownloadHQ(videoUrl, app.getPath('downloads'), cb)
+    return await youtubeDownloadHQ(data.url, data.type, app.getPath('downloads'), cb)
   }
   catch (e) {
     console.log(e)
