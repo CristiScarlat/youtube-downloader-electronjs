@@ -69,3 +69,21 @@ input[type="text"] {
    color: #313131;
    font-weight: 600;
  }
+
+.video-info {
+  text-align: start;
+  max-width: 35rem;
+  margin: auto;
+  border: 1px solid white;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.dl-finish-info {
+  max-width: 30rem;
+  margin: 1rem auto;
+  border: 1px solid green;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: darkgreen;
+}
